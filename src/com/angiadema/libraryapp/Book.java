@@ -63,10 +63,8 @@ public class Book {
 				+ numberOfPages + "]";
 	}
 	
-//	public printBookInfo() {
-//		
-//	}
-	
-	
-
+	// Print book information
+	public void printBookInfo() {
+		System.out.println(this.toString());
+	}
 }
