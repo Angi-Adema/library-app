@@ -16,7 +16,6 @@ public class Book {
 	
 	// Parameterized constructor	
 	public Book(int id, String title, String author, String isbn, int numberOfPages) {
-		super();
 		this.id = id;
 		this.title = title;
 		this.author = author;
@@ -59,7 +58,7 @@ public class Book {
 	// Override the toString() method
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", isbn=" + isbn + ", numberOfPages="
+		return "Book [ID=" + id + ", title=" + title + ", author=" + author + ", ISBN=" + isbn + ", Number of Pages="
 				+ numberOfPages + "]";
 	}
 	
