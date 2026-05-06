@@ -10,9 +10,10 @@ public class Inventory {
 	// ArrayList to store checked-out books
 	private ArrayList<Book> checkedOutBooks = new ArrayList<>();
 	
-	// Add books to the inventory
-	public void addBook() {
-		
+	// Add books to the inventory and print confirmation message
+	public void addBook(Book book) {
+		bookInventory.add(book);
+		System.out.println("Book added to the library.");
 	}
 	
 	// Remove book from inventory and store in checkedOutBooks
@@ -27,6 +28,20 @@ public class Inventory {
 	
 	// Call printBookInfo() and iterate over book collection to print all book details
 	public void printAll() {
+		
+		// First check if there are books in the book inventory notify user if it is
+		if (bookInventory.isEmpty()) {
+			System.out.println("There are not books in inventory.");
+			return;
+		}
+		
+		// Use enhanced FOR loop to loop through and print book inventory list
+		for (Book bookList : bookInventory) {
+			bookList.printBookInfo();
+			
+			// Add an empty line between the printed book objects
+			System.out.println();
+		}
 		
 	}
 	
