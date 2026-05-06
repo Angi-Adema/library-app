@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Inventory {
 
-	// ArrayList to store book inventory
-	ArrayList<String> bookInventory = new ArrayList<>();
+	// ArrayList to store available book inventory
+	private ArrayList<Book> bookInventory = new ArrayList<>();
 	
-	// ArrayList to store checked out books
-	ArrayList<String> checkedOutBooks = new ArrayList<>();
+	// ArrayList to store checked-out books
+	private ArrayList<Book> checkedOutBooks = new ArrayList<>();
 	
 	// Add books to the inventory
 	public void addBook() {
