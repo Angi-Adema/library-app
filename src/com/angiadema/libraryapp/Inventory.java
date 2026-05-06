@@ -40,7 +40,26 @@ public class Inventory {
 	}
 	
 	// Return book by removing from checkedOutBooks and adding back to inventory
-	public void returnBook() {
+	public void returnBook(int id) {
+		
+		// Loop through checkedOutBooks to find the book ID
+		for (int i = 0; i < checkedOutBooks.size(); i++) {
+			
+			// Store current book object in a variable
+			Book bookInfo = checkedOutBooks.get(i);
+			
+			// Conditional statement to check if entered id matches current object
+			// If it does then remove the book from the checkedOutBooks list
+			// Add the book back into the bookInventory list and print confirmation
+			if (bookInfo.getId() == id) {
+				checkedOutBooks.remove(i);
+				bookInventory.add(bookInfo);
+				System.out.println("Book successfully returned.");
+				return;
+			}
+		}
+		// Notify user if the book was not successfully checked back in
+		System.out.println("Error occurred returning book, please try again.");
 		
 	}
 	
