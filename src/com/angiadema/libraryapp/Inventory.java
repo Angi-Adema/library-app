@@ -103,8 +103,10 @@ public class Inventory {
 		}
 	}
 	
-	// Add helper methods to handle edge cases (user returns book when none have been checked out)
-	public void getMainInventoryCount() {
-		
+	// Return the size of the book inventory
+	public int getMainInventoryCount() {
+		return bookInventory.size();	
 	}
+	
+	// Add helper methods to handle edge cases (user returns book when none have been checked out)
 }
