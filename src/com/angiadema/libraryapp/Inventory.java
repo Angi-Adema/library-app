@@ -85,6 +85,22 @@ public class Inventory {
 	// Search book inventory and return matching or partially matching titles
 	public void searchByTitle(String title) {
 		
+		// Define a variable found to track whether the title was found
+		boolean found = false;		
+		
+		// Loop through bookInventory
+		for (Book book : bookInventory) {
+			
+			// Conditional to check if user entry matches current book object
+			if (book.getTitle().toLowerCase().contains(title.toLowerCase())) {
+				book.printBookInfo();
+				found = true;
+			} 
+		}
+		// Notify the user if no matching titles found
+		if (found == false) {
+			System.out.println("No matching book found.");
+		}
 	}
 	
 	// Add helper methods to handle edge cases (user returns book when none have been checked out)
