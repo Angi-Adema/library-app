@@ -17,8 +17,26 @@ public class Inventory {
 	}
 	
 	// Remove book from inventory and store in checkedOutBooks
-	public void borrowBook() {
+	public void borrowBook(int id) {
 		
+		// Loop through bookInventory to see if the ID is available
+		for (int i = 0; i < bookInventory.size(); i++) {
+			
+			// Store current book object in a variable
+			Book bookInfo = bookInventory.get(i);
+			
+			// Conditional to check if current book id matches entered id  
+			// Remove from inventory if id matches  
+			// Add book to the checked-out list and print confirmation
+			if (bookInfo.getId() == id) {
+				bookInventory.remove(i);
+				checkedOutBooks.add(bookInfo);
+				System.out.println("Book successfully borrowed.");
+				return;
+			} 	
+		}
+		// Notify user if the book is not found
+		System.out.println("Book not found.");
 	}
 	
 	// Return book by removing from checkedOutBooks and adding back to inventory
@@ -31,13 +49,13 @@ public class Inventory {
 		
 		// First check if there are books in the book inventory notify user if it is
 		if (bookInventory.isEmpty()) {
-			System.out.println("There are not books in inventory.");
+			System.out.println("There are no books in inventory.");
 			return;
 		}
 		
 		// Use enhanced FOR loop to loop through and print book inventory list
-		for (Book bookList : bookInventory) {
-			bookList.printBookInfo();
+		for (Book book : bookInventory) {
+			book.printBookInfo();
 			
 			// Add an empty line between the printed book objects
 			System.out.println();
