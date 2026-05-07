@@ -117,6 +117,7 @@ public class Library {
 				}
 					
 			} catch (Exception e) {
+				// Handle the exception notifying the user and clearing buffer
 				System.out.println("Invalid input. Please try again!");
 				scnr.nextLine();
 				
