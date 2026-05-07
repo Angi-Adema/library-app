@@ -59,7 +59,7 @@ public class Book {
 	@Override
 	public String toString() {
 		return "Book [ID=" + id + ", title=" + title + ", author=" + author + ", ISBN=" + isbn + ", Number of Pages="
-				+ numberOfPages + "]";
+				+ numberOfPages + "]\n";
 	}
 	
 	// Print book information

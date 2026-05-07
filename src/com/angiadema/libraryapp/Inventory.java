@@ -15,7 +15,7 @@ public class Inventory {
 		
 		// Call helper bookIdDuplicate() to see if we already have the book
 		if (bookIdDuplicate(book.getId())) {
-			System.out.println("Book is already in the inventory. Book not added.");
+			System.out.println("Book is already in the inventory. Book not added.\n");
 			return;
 		}
 		
@@ -40,7 +40,7 @@ public class Inventory {
 			if (bookInfo.getId() == id) {
 				bookInventory.remove(i);
 				checkedOutBooks.add(bookInfo);
-				System.out.println("Book successfully borrowed.");
+				System.out.println("Book successfully borrowed.\n");
 				return;
 			} 	
 		}
@@ -53,7 +53,7 @@ public class Inventory {
 		
 		// Confirm whether we have books checked out
 		if (isCheckedOutInventoryEmpty()) {
-			System.out.println("This book does not belong to this library, none checked out.");
+			System.out.println("This book does not belong to this library, none checked out.\n");
 			return;
 		}
 		
@@ -69,7 +69,7 @@ public class Inventory {
 			if (bookInfo.getId() == id) {
 				checkedOutBooks.remove(i);
 				bookInventory.add(bookInfo);
-				System.out.println("Book successfully returned.");
+				System.out.println("Book successfully returned.\n");
 				return;
 			}
 		}
@@ -83,7 +83,7 @@ public class Inventory {
 		
 		// First check if there are books in the book inventory notify user if it is
 		if (bookInventory.isEmpty()) {
-			System.out.println("There are no books in inventory.");
+			System.out.println("There are no books in inventory.\n");
 			return;
 		}
 		

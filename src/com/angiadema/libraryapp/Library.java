@@ -63,7 +63,7 @@ public class Library {
 				
 					case 2:
 						// Prompt user for ID input
-						System.out.print("Please enter book ID: ");
+						System.out.print("Please enter book ID: \n");
 						int borrowedId = scnr.nextInt();
 						scnr.nextLine();
 				
@@ -73,7 +73,7 @@ public class Library {
 			
 					case 3:
 						// Prompt user for ID input
-						System.out.print("Please enter book ID: ");
+						System.out.print("Please enter book ID: \n");
 						int returnID = scnr.nextInt();
 						scnr.nextLine();
 				
@@ -83,7 +83,7 @@ public class Library {
 				
 					case 4: 
 						// Prompt user for full or partial book title
-						System.out.print("Please enter the full or partial title of book: ");
+						System.out.print("Please enter the full or partial title of book: \n");
 						String titleSearch = scnr.nextLine();
 				
 						// Call searchByTitle() method with input full or partial title
