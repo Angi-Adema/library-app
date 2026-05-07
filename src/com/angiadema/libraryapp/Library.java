@@ -65,7 +65,8 @@ public class Library {
 						while (numberOfPages <= 0) {
 							System.out.println("Pages must be greater than 0.\n");
 							System.out.println("Please enter number of pages: ");
-							break;
+							numberOfPages = scnr.nextInt();
+							scnr.nextLine();
 						}
 				
 						// Call parameterized constructor to create a new book object using input
