@@ -138,6 +138,13 @@ public class Inventory {
 				return true;
 			}
 		}
+		
+		// Loop through the checkedOutBooks list to compare IDs with the one entered
+		for (Book book : checkedOutBooks) {
+			if (book.getId() == id) {
+				return true;
+			}
+		}
 		return false;
 	}
 	
