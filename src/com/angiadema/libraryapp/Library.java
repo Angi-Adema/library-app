@@ -47,9 +47,11 @@ public class Library {
 						System.out.print("Please enter the book author: ");
 						String author = scnr.nextLine();
 						
-						// Conditional preventing empty space
-						if (author.isBlank()) {
+						// While loop preventing empty space
+						while (author.isBlank()) {
 							System.out.println("Author cannot be blank.\n");
+							System.out.println("Please enter the book author: ");
+							author = scnr.nextLine();
 						}
 				
 						System.out.print("Please enter the book ISBN number: ");
@@ -59,9 +61,10 @@ public class Library {
 						int numberOfPages = scnr.nextInt();
 						scnr.nextLine();
 						
-						// Conditional requiring a number greater than 0
-						if (numberOfPages <= 0) {
+						// While loop enforcing a page number greater than 0
+						while (numberOfPages <= 0) {
 							System.out.println("Pages must be greater than 0.\n");
+							System.out.println("Please enter number of pages: ");
 							break;
 						}
 				
