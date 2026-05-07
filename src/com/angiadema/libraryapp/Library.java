@@ -43,9 +43,14 @@ public class Library {
 				
 						System.out.print("Please enter the book title: ");
 						String title = scnr.nextLine();
-				
+						
 						System.out.print("Please enter the book author: ");
 						String author = scnr.nextLine();
+						
+						// Conditional preventing empty space
+						if (author.isBlank()) {
+							System.out.println("Author cannot be blank.\n");
+						}
 				
 						System.out.print("Please enter the book ISBN number: ");
 						String isbn = scnr.nextLine();
@@ -53,6 +58,12 @@ public class Library {
 						System.out.print("Please enter number of pages: ");
 						int numberOfPages = scnr.nextInt();
 						scnr.nextLine();
+						
+						// Conditional requiring a number greater than 0
+						if (numberOfPages <= 0) {
+							System.out.println("Pages must be greater than 0.\n");
+							break;
+						}
 				
 						// Call parameterized constructor to create a new book object using input
 						Book book = new Book(id, title, author, isbn, numberOfPages);
