@@ -12,6 +12,14 @@ public class Inventory {
 	
 	// Add books to the inventory and print confirmation message
 	public void addBook(Book book) {
+		
+		// Call helper bookIdDuplicate() to see if we already have the book
+		if (bookIdDuplicate(book.getId())) {
+			System.out.println("Book is already in the inventory. Book not added.");
+			return;
+		}
+		
+		// Add the book to the book inventory
 		bookInventory.add(book);
 		System.out.println("Book added to the library.");
 	}
@@ -41,6 +49,11 @@ public class Inventory {
 	
 	// Return book by removing from checkedOutBooks and adding back to inventory
 	public void returnBook(int id) {
+		
+		// Confirm whether we have books checked out
+		if (isCheckedOutInventoryEmpty()) {
+			System.out.println("This book does not belong to this library, none checked out.");
+		}
 		
 		// Loop through checkedOutBooks to find the book ID
 		for (int i = 0; i < checkedOutBooks.size(); i++) {
@@ -112,5 +125,22 @@ public class Inventory {
 	// Return the size of the checked out books list
 	public int getCheckedOutBooksCount() {
 		return checkedOutBooks.size();
+	}
+	
+	// See if a book already exists in the list
+	public boolean bookIdDuplicate(int id) {
+		
+		// Loop through the bookInventory list and compare IDs with the one entered
+		for (Book book : bookInventory) {
+			if (book.getId() == id) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	// Edge case for if a book is being returned when none are checked out
+	public boolean isCheckedOutInventoryEmpty() {
+		return checkedOutBooks.isEmpty();
 	}
 }
