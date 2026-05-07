@@ -45,7 +45,7 @@ public class Inventory {
 			} 	
 		}
 		// Notify user if the book is not found
-		System.out.println("Book not found.");
+		System.out.println("Book not found.\n");
 	}
 	
 	// Return book by removing from checkedOutBooks and adding back to inventory
@@ -74,7 +74,7 @@ public class Inventory {
 			}
 		}
 		// Notify user if the book was not successfully checked back in
-		System.out.println("Error occurred returning book, please try again.");
+		System.out.println("Error occurred returning book, please try again.\n");
 		
 	}
 	
@@ -114,7 +114,7 @@ public class Inventory {
 		}
 		// Notify the user if no matching titles found
 		if (found == false) {
-			System.out.println("No matching book found.");
+			System.out.println("No matching book found.\n");
 		}
 	}
 	
