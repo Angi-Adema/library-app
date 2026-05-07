@@ -17,9 +17,7 @@ public class Library {
 		
 		// WHILE loop to handle menu options
 		while (option != 6) {
-			System.out.println("Menu Options:");
-			System.out.println();
-			
+			System.out.println("Menu Options:");			
 			System.out.println("1. Add Book:");
 			System.out.println("2. Check-Out Book:");
 			System.out.println("3. Return Book:");
