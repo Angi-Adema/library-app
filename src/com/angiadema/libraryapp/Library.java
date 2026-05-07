@@ -18,12 +18,16 @@ public class Library {
 		// WHILE loop to handle menu options
 		while (option != 6) {
 			System.out.println("Menu Options:");
+			System.out.println();
+			
 			System.out.println("1. Add Book:");
 			System.out.println("2. Check-Out Book:");
 			System.out.println("3. Return Book:");
 			System.out.println("4. Search by Title:");
 			System.out.println("5. Print All Books:");
 			System.out.println("6. Exit:");
+			System.out.println();
+			
 			System.out.println("Please enter a number 1 - 5 or 6 to Exit");
 			
 			// Read user input and handle input errors then clear the input
@@ -35,20 +39,20 @@ public class Library {
 					switch(option) {
 					case 1:
 						// Prompt user for individual inputs
-						System.out.println("Please enter the book ID: ");
+						System.out.print("Please enter the book ID: ");
 						int id = scnr.nextInt();
-						scnr.nextLine();
+						scnr.nextLine();   // Clear buffer
 				
-						System.out.println("Please enter the book title: ");
+						System.out.print("Please enter the book title: ");
 						String title = scnr.nextLine();
 				
-						System.out.println("Please enter the book author: ");
+						System.out.print("Please enter the book author: ");
 						String author = scnr.nextLine();
 				
-						System.out.println("Please enter the book ISBN number: ");
+						System.out.print("Please enter the book ISBN number: ");
 						String isbn = scnr.nextLine();
 				
-						System.out.println("Please enter number of pages: ");
+						System.out.print("Please enter number of pages: ");
 						int numberOfPages = scnr.nextInt();
 						scnr.nextLine();
 				
@@ -61,7 +65,7 @@ public class Library {
 				
 					case 2:
 						// Prompt user for ID input
-						System.out.println("Please enter book ID: ");
+						System.out.print("Please enter book ID: ");
 						int borrowedId = scnr.nextInt();
 						scnr.nextLine();
 				
@@ -71,7 +75,7 @@ public class Library {
 			
 					case 3:
 						// Prompt user for ID input
-						System.out.println("Please enter book ID: ");
+						System.out.print("Please enter book ID: ");
 						int returnID = scnr.nextInt();
 						scnr.nextLine();
 				
@@ -81,7 +85,7 @@ public class Library {
 				
 					case 4: 
 						// Prompt user for full or partial book title
-						System.out.println("Please enter the full or partial title of book: ");
+						System.out.print("Please enter the full or partial title of book: ");
 						String titleSearch = scnr.nextLine();
 				
 						// Call searchByTitle() method with input full or partial title

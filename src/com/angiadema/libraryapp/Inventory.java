@@ -22,6 +22,9 @@ public class Inventory {
 		// Add the book to the book inventory
 		bookInventory.add(book);
 		System.out.println("Book added to the library.");
+		
+		// Empty line for readability
+		System.out.println();
 	}
 	
 	// Remove book from inventory and store in checkedOutBooks
