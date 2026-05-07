@@ -17,7 +17,7 @@ public class Library {
 		
 		// WHILE loop to handle menu options
 		while (option != 6) {
-			System.out.println("Menu Option:");
+			System.out.println("Menu Options:");
 			System.out.println("1. Add Book:");
 			System.out.println("2. Check-Out Book:");
 			System.out.println("3. Return Book:");
@@ -26,24 +26,91 @@ public class Library {
 			System.out.println("6. Exit:");
 			System.out.println("Please enter a number 1 - 5 or 6 to Exit");
 			
-			// Read user input then clear the input
-			option = scnr.nextInt();
-			scnr.nextInt();
+			// Read user input and handle input errors then clear the input
+			try {
+				option = scnr.nextInt();
+				scnr.nextLine();
 			
-			// Switch statement accepting selection and performing task
-			switch(option) {
-			case 1:
-				System.out.println("Please enter book ID: ");
-				int id = scnr.nextInt();
-				scnr.nextInt();
+					// Switch statement accepting selection and carrying out tasks according to option
+					switch(option) {
+					case 1:
+						// Prompt user for individual inputs
+						System.out.println("Please enter the book ID: ");
+						int id = scnr.nextInt();
+						scnr.nextLine();
+				
+						System.out.println("Please enter the book title: ");
+						String title = scnr.nextLine();
+				
+						System.out.println("Please enter the book author: ");
+						String author = scnr.nextLine();
+				
+						System.out.println("Please enter the book ISBN number: ");
+						String isbn = scnr.nextLine();
+				
+						System.out.println("Please enter number of pages: ");
+						int numberOfPages = scnr.nextInt();
+						scnr.nextLine();
+				
+						// Call parameterized constructor to create a new book object using input
+						Book book = new Book(id, title, author, isbn, numberOfPages);
+				
+						// Call addBook() with new book object to add it to the inventory
+						inventory.addBook(book);
+						break;
+				
+					case 2:
+						// Prompt user for ID input
+						System.out.println("Please enter book ID: ");
+						int borrowedId = scnr.nextInt();
+						scnr.nextLine();
+				
+						// Call borrowBook() method with the book ID to process check-out
+						inventory.borrowBook(borrowedId);
+						break;
+			
+					case 3:
+						// Prompt user for ID input
+						System.out.println("Please enter book ID: ");
+						int returnID = scnr.nextInt();
+						scnr.nextLine();
+				
+						// Call returnBook() method with the book ID to process return
+						inventory.returnBook(returnID);
+						break;
+				
+					case 4: 
+						// Prompt user for full or partial book title
+						System.out.println("Please enter the full or partial title of book: ");
+						String titleSearch = scnr.nextLine();
+				
+						// Call searchByTitle() method with input full or partial title
+						inventory.searchByTitle(titleSearch);
+						break;
+				
+					case 5:
+						// Call the printAll() method to print full inventory
+						inventory.printAll();
+						break;
+				
+					case 6:
+						// If option 6 is selected to Exit, exit program
+						System.out.println("Exiting the program. Good-bye!");
+						break;
+				
+					default:
+						System.out.println("Please enter an option 1 - 6: ");
+				
+				}
+					
+			} catch (Exception e) {
+				System.out.println("Invalid input. Please try again!");
+				scnr.nextLine();
 				
 			}
-			
+
 		}
-		
 		// Close the scanner
 		scnr.close();
-
 	}
-
 }

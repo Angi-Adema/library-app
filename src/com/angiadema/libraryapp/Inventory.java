@@ -53,6 +53,7 @@ public class Inventory {
 		// Confirm whether we have books checked out
 		if (isCheckedOutInventoryEmpty()) {
 			System.out.println("This book does not belong to this library, none checked out.");
+			return;
 		}
 		
 		// Loop through checkedOutBooks to find the book ID
