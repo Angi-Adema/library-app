@@ -55,7 +55,7 @@ public class Book {
 		this.numberOfPages = numberOfPages;
 	}
 
-	// Override the toString() method
+	// Override the toString() method to print book object
 	@Override
 	public String toString() {
 		return "Book [ID=" + id + ", title=" + title + ", author=" + author + ", ISBN=" + isbn + ", Number of Pages="

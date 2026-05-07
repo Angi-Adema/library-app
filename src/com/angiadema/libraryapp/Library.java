@@ -9,7 +9,7 @@ public class Library {
 		// Use a Scanner to prompt the user to interact with the system
 		Scanner scnr = new Scanner(System.in);
 		
-		// Instantiate a new Inventory object to use the functionality here
+		// Instantiate a new Inventory object to use method functionality here
 		Inventory inventory = new Inventory();
 		
 		// Selection variable storing the user's selection
@@ -26,7 +26,7 @@ public class Library {
 			System.out.println("6. Exit:");
 			System.out.println();
 			
-			System.out.println("Please enter a number 1 - 5 or 6 to Exit");
+			System.out.println("Please enter a number 1 - 5 or 6 to Exit\n");
 			
 			// Read user input and handle input errors then clear the input
 			try {
